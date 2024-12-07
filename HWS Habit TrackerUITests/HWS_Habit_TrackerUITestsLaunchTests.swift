@@ -1,0 +1,33 @@
+//
+//  HWS_Habit_TrackerUITestsLaunchTests.swift
+//  HWS Habit TrackerUITests
+//
+//  Created by Constantin Lisnic on 07/12/2024.
+//
+
+import XCTest
+
+final class HWS_Habit_TrackerUITestsLaunchTests: XCTestCase {
+
+    override class var runsForEachTargetApplicationUIConfiguration: Bool {
+        true
+    }
+
+    override func setUpWithError() throws {
+        continueAfterFailure = false
+    }
+
+    @MainActor
+    func testLaunch() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        // Insert steps here to perform after app launch but before taking a screenshot,
+        // such as logging into a test account or navigating somewhere in the app
+
+        let attachment = XCTAttachment(screenshot: app.screenshot())
+        attachment.name = "Launch Screen"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+}
